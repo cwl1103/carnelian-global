@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carnelian Global</title>
+  <meta name="description" content="Carnelian Global LLC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --obsidian: #141212;
+      --obsidian-deep: #0D0B0B;
+      --bone: #E6E4E2;
+      --slate: #8C8885;
+      --slate-faint: #5C5856;
+      --carnelian: #C85A32;
+      --carnelian-deep: #A33B14;
+      --rule: rgba(230, 228, 226, 0.12);
+      --rule-strong: rgba(230, 228, 226, 0.28);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--obsidian);
+      background-image: radial-gradient(
+        ellipse at center,
+        var(--obsidian) 0%,
+        var(--obsidian) 55%,
+        var(--obsidian-deep) 130%
+      );
+      color: var(--bone);
+      font-family: 'Fraunces', 'Times New Roman', serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      letter-spacing: 0.005em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      animation: fadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      z-index: 1;
+      mix-blend-mode: screen;
+    }
+
+    .page {
+      max-width: 940px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 56px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      text-align: center;
+    }
+
+    main.plate {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .plate h1 {
+      font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+      font-weight: 400;
+      font-size: clamp(30px, 5.2vw, 64px);
+      line-height: 1.0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      color: var(--bone);
+      text-shadow: 0 0 60px rgba(230, 228, 226, 0.08);
+      white-space: nowrap;
+    }
+
+    .plate .posture {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 36;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(20px, 2.2vw, 26px);
+      color: var(--slate);
+      letter-spacing: 0.005em;
+      margin-bottom: 72px;
+      opacity: 0.85;
+      transition: opacity 0.5s ease;
+    }
+
+    .plate .posture:hover {
+      opacity: 1;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: '';
+      display: inline-block;
+      width: 56px;
+      height: 1px;
+      background: var(--rule-strong);
+    }
+
+    .ornament .ember {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--carnelian);
+      box-shadow:
+        0 0 0 1px rgba(200, 90, 50, 0.2),
+        0 0 12px rgba(200, 90, 50, 0.4),
+        0 0 24px rgba(200, 90, 50, 0.15);
+    }
+
+    .contact-email {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: 'opsz' 24;
+      font-size: 21px;
+    }
+
+    .contact-email a {
+      color: var(--bone);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule-strong);
+      padding-bottom: 3px;
+      opacity: 0.65;
+      transition: opacity 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    }
+
+    .contact-email a:hover {
+      opacity: 1;
+      color: var(--carnelian);
+      border-bottom-color: var(--carnelian);
+    }
+
+    .locations {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      margin-top: 56px;
+      opacity: 0.5;
+      transition: opacity 0.5s ease;
+    }
+
+    .locations:hover {
+      opacity: 1;
+    }
+
+    footer {
+      padding: 32px 0 40px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--slate-faint);
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    ::selection {
+      background: var(--bone);
+      color: var(--obsidian);
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 0 28px; }
+      main.plate { padding: 48px 0; }
+      .plate .posture { margin-bottom: 52px; }
+      .ornament::before, .ornament::after { width: 36px; }
+      .locations { margin-top: 44px; }
+      footer { padding: 24px 0 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      * { transition: none !important; }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        background-image: none;
+        color: #000;
+      }
+      body::before { display: none; }
+      .plate h1 { color: #000; text-shadow: none; }
+      .plate .posture,
+      .contact-email a,
+      .locations,
+      footer {
+        color: #000;
+        opacity: 1;
+      }
+      .ornament .ember {
+        background: #A33B14;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <main class="plate">
+    <h1>Carnelian Global</h1>
+    <p class="posture">By introduction.</p>
+
+    <div class="ornament">
+      <span class="ember"></span>
+    </div>
+
+    <div class="contact-email">
+      <a href="mailto:tom@carnelianglobal.com">tom@carnelianglobal.com</a>
+    </div>
+
+    <div class="locations">Washington DC &nbsp;·&nbsp; New York &nbsp;·&nbsp; San Francisco</div>
+  </main>
+
+  <footer>
+    © 2026 Carnelian Global LLC
+  </footer>
+
+</div>
+
+</body>
+</html>
