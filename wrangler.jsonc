@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "carnelian-global2",
+  "name": "carnelian-global-site",
   "compatibility_date": "2026-05-27",
   "observability": {
     "enabled": true
